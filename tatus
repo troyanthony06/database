@@ -1,0 +1,341 @@
+[33mcommit 20123e53b9337ef08e8b87f4a1cfdaf4fd88e14d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Paul Parkinson <paul.parkinson@gmail.com>
+Date:   Thu May 2 17:12:03 2024 -0400
+
+    update 11638 to just be learn sql (green button lite) (#512)
+    
+    * hackathon workshop init
+    
+    * hackathon workshop init
+    
+    * hackathon workshop - reduced to just intro to sql
+    
+    * hackathon workshop - reduced to just intro to sql
+
+[33mcommit 1cfac64f9767b7344cadb94da6575ab1107f777b[m
+Author: Kamryn Vinson <68861214+kamryn-v@users.noreply.github.com>
+Date:   Thu May 2 17:05:48 2024 -0400
+
+    23ai updates (#511)
+    
+    * 23ai changes
+    
+    * 23ai updates
+
+[33mcommit 0654786069ff4612a44d2a1b0cccaa9e2dd86410[m
+Author: Kamryn Vinson <68861214+kamryn-v@users.noreply.github.com>
+Date:   Thu May 2 12:24:34 2024 -0400
+
+    23ai changes (#510)
+
+[33mcommit e53a92905d9d9750035f4d745b48f52ee2c31d42[m
+Author: Paul Parkinson <paul.parkinson@oracle.com>
+Date:   Wed May 1 21:57:28 2024 -0400
+
+    11638  hackathon workshop init (#509)
+    
+    * hackathon workshop init
+    
+    * hackathon workshop init
+
+[33mcommit d85f0640d763657d39dc725776a666c14f42799f[m
+Author: Sylaja Kannan <31510841+SylajaK@users.noreply.github.com>
+Date:   Tue Apr 30 13:13:17 2024 +0530
+
+    WMS ID: 11512 Change in PAR file name (#508)
+    
+    * New folder for a new LiveLab
+    
+    Created a new folder with placeholder text for a new LiveLab
+    
+    * Added instructions to integrate MicroTx lib files
+    
+    * Instructions
+    
+    Updated image, instructions to run the sample app, integrate TMM files with sample app, and update the YAML file.
+    
+    * Updated tags and tasks
+    
+    Restructured the content.
+    
+    * Changes to manifest file
+    
+    * Purchase and sale of stocks
+    
+    * replaced XA sample app with Banking and Trading app
+    
+    * updated intro
+    
+    * uncomment lines without going through details
+    
+    * incorporated feedback
+    
+    * Updated images for ATP instances
+    
+    * Self QA
+    
+    Fixed issues that were identified during self QA.
+    
+    * updated links to tasks within page
+    
+    * Self QA checks
+    
+    * More self QA changes
+    
+    * added lab 2
+    
+    * MTRM-1123
+    
+    Incorporated feedback received from the QA team.
+    
+    * Incorporated feedback
+    
+    Incorporated feedback received from the LiveLabs team
+    
+    * Update screenshots for Lab 4
+    
+    Added screenshots for Lab 4: ATP-S instance from the latest OCI console
+    
+    * Chunked data and incorporated feedback
+    
+    Broke down the long lab of running the app into two smaller labs and incorporated feedback received from Anoosha.
+    
+    * Minor change in Lab number
+    
+    * minor updates to the prerequisites
+    
+    * Update link to common image
+    
+    * Optional task to enable txn history
+    
+    * resized images
+    
+    resized images and minor text updates
+    
+    * Updated link to the ZIP file
+    
+    * Updated a link
+    
+    * Updated a link
+    
+    * Updates for changes to the image
+    
+    Bharath has made changes to the image. I have updated the text accordingly.
+    
+    * changes for updated image
+    
+    * Changes to the stock broker app
+    
+    * Comments incorporated to Lab 1
+    
+    * Incorporated review comments and updated images
+    
+    * Changes to the Stock Broker app
+    
+    * Incorporated feedback rxd from Bharath
+    
+    * Incorporated Shivanshu's feedback
+    
+    * Update integrate-microtx-lib-files.md
+    
+    * Update integrate-microtx-lib-files.md
+    
+    * Specify shape to select
+    
+    A specific shape has to be selected.
+    
+    * minor change
+    
+    * LiveLabs content for ORDS apps
+    
+    First draft of LiveLabs content for ORDS apps
+    
+    * Draft 2
+    
+    Ready for review
+    
+    * QA review comments incorporated
+    
+    Self QA completed
+    QA review comments incorporated
+    
+    * Update ords-provision.md
+    
+    Updated instructions to change the password.
+    
+    * Update ords-provision.md
+    
+    * Update prepare-setup.md
+    
+    * Minor updates
+    
+    Reorganized some text
+    
+    * bullets
+    
+    * minor change to desktop guide's ToC
+    
+    * Database actions image updated
+    
+    * Update prepare-setup.md
+    
+    * Change in PAR file name
+    
+    ---------
+    
+    Co-authored-by: ZackaryRice <128171922+ZackaryRice@users.noreply.github.com>
+    Co-authored-by: Brijesh Deo <111794258+brijd@users.noreply.github.com>
+
+[33mcommit 1c3ec934cefd6d49c47821142695a0f68233fca0[m
+Author: Sylaja Kannan <31510841+SylajaK@users.noreply.github.com>
+Date:   Mon Apr 29 16:51:37 2024 +0530
+
+    WMS ID: 11512 Database Actions image and text updated (#506)
+    
+    * New folder for a new LiveLab
+    
+    Created a new folder with placeholder text for a new LiveLab
+    
+    * Added instructions to integrate MicroTx lib files
+    
+    * Instructions
+    
+    Updated image, instructions to run the sample app, integrate TMM files with sample app, and update the YAML file.
+    
+    * Updated tags and tasks
+    
+    Restructured the content.
+    
+    * Changes to manifest file
+    
+    * Purchase and sale of stocks
+    
+    * replaced XA sample app with Banking and Trading app
+    
+    * updated intro
+    
+    * uncomment lines without going through details
+    
+    * incorporated feedback
+    
+    * Updated images for ATP instances
+    
+    * Self QA
+    
+    Fixed issues that were identified during self QA.
+    
+    * updated links to tasks within page
+    
+    * Self QA checks
+    
+    * More self QA changes
+    
+    * added lab 2
+    
+    * MTRM-1123
+    
+    Incorporated feedback received from the QA team.
+    
+    * Incorporated feedback
+    
+    Incorporated feedback received from the LiveLabs team
+    
+    * Update screenshots for Lab 4
+    
+    Added screenshots for Lab 4: ATP-S instance from the latest OCI console
+    
+    * Chunked data and incorporated feedback
+    
+    Broke down the long lab of running the app into two smaller labs and incorporated feedback received from Anoosha.
+    
+    * Minor change in Lab number
+    
+    * minor updates to the prerequisites
+    
+    * Update link to common image
+    
+    * Optional task to enable txn history
+    
+    * resized images
+    
+    resized images and minor text updates
+    
+    * Updated link to the ZIP file
+    
+    * Updated a link
+    
+    * Updated a link
+    
+    * Updates for changes to the image
+    
+    Bharath has made changes to the image. I have updated the text accordingly.
+    
+    * changes for updated image
+    
+    * Changes to the stock broker app
+    
+    * Comments incorporated to Lab 1
+    
+    * Incorporated review comments and updated images
+    
+    * Changes to the Stock Broker app
+    
+    * Incorporated feedback rxd from Bharath
+    
+    * Incorporated Shivanshu's feedback
+    
+    * Update integrate-microtx-lib-files.md
+    
+    * Update integrate-microtx-lib-files.md
+    
+    * Specify shape to select
+    
+    A specific shape has to be selected.
+    
+    * minor change
+    
+    * LiveLabs content for ORDS apps
+    
+    First draft of LiveLabs content for ORDS apps
+    
+    * Draft 2
+    
+    Ready for review
+    
+    * QA review comments incorporated
+    
+    Self QA completed
+    QA review comments incorporated
+    
+    * Update ords-provision.md
+    
+    Updated instructions to change the password.
+    
+    * Update ords-provision.md
+    
+    * Update prepare-setup.md
+    
+    * Minor updates
+    
+    Reorganized some text
+    
+    * bullets
+    
+    * minor change to desktop guide's ToC
+    
+    * Database actions image updated
+    
+    ---------
+    
+    Co-authored-by: ZackaryRice <128171922+ZackaryRice@users.noreply.github.com>
+    Co-authored-by: Brijesh Deo <111794258+brijd@users.noreply.github.com>
+
+[33mcommit 414f655c65863087c4f19feb48e2d5f5e1a3e4d7[m
+Author: Bharath MC <bharath.mc@oracle.com>
+Date:   Thu Apr 25 20:03:47 2024 +0530
+
+    WMS ID: 11512 - MicroTx mainfest for OCW 24 HOL (#505)
+    
+    * New folder for a new LiveLab
+    
+    Created a new folder with placeholde
