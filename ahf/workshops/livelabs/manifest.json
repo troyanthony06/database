@@ -5,7 +5,7 @@
         {
           "title": "Introduction",
           "description": "Learn how to install and upgrade Oracle Autonomous Health Framework (AHF) on the fly without manually downloading the setup file, ahf_setup.",
-          "filename": "./../../ahf-autoupgrade-intro/ahf-autoupgrade-intro.md"
+          "filename": "./../../ahf-autoupgrade-intro/ahf-install.md"
         },
         {
           "title": "Get Started",
