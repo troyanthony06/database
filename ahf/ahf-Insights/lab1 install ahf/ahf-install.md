@@ -10,9 +10,7 @@ Estimated Time: 30 minutes
 
 In this lab, you will:
 * (Recommended) Install AHF on Linux or UNIX as **root** user in daemon mode
-* Install AHF on Linux or UNIX as a non-root user in non-daemon mode
-* Run AHF on SELinux-enabled systems
-* Uninstall AHF
+
 
 ### Prerequisites
 
@@ -29,12 +27,14 @@ In this lab, you will:
 ## Task 2: Install AHF on Linux or UNIX as root user in daemon mode
 
 To obtain the fullest capabilities of Oracle Autonomous Health Framework (AHF), install it as **root**.
+Try to use the latestst version of AHF to ensure you get all of the described functionality.
+To generate an Insights report you need at least AHF **v22.3**
+AHF can be downloaded fromMyOracle Support(MOS) throughnote**2550798.1** or follow the shortlink http://bit.ly/oracleahf
+**A modified version of AHF is needed frLiveLabs For simplicity we have placed the install file for AHF **v24.5** in the Object Store
 
 If Oracle Autonomous Health Framework is already installed, then reinstalling performs an upgrade to the existing location.
 
-SELinux is a set of kernel mods and user-space tools that provide another layer of system security, precise access control, system-wide admin-defined policies, and improved mitigation for privilege escalation attacks. For more information, see [Use SELinux on Oracle Linux](https://docs.oracle.com/en/learn/ol-selinux/index.html#introduction).
 
-SELinux is already setup in **Enforcing** mode on this Linux box. Refer to Task 5 to install AHF on SELinux-enabled systems.
 
 1. Switch to **root** user.
 
@@ -43,258 +43,122 @@ SELinux is already setup in **Enforcing** mode on this Linux box. Refer to Task 
     sudo su
     </copy>
     ```
-2. Unzip the **AHF-LINUX_<*version*>.zip** file to the **/tmp/ahf24.4.0** directory.
+2. Download the AHF 24.4 zip fileile rom the object store
+  ```
+    cd ~opc/Downloads
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/dKFif3QSyzV-R1-fTsPuojrCK7x5S0qirEyjs1AVmFwxw2hTpZs5UzUkBFCxtY-y/n/c4u04/b/livelabsfiles/o/labfiles/ahf_setup
+    Command output:
+
+    ```
+    Connecting to objectstorage.us-ashburn-1.oraclecloud.com (objectstorage.us-ashburn-1.oraclecloud.com)|134.70.24.1|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 420233163 (401M) [application/zip]
+Saving to: ‘AHF-LINUX_v24.4.0.zip.1’
+
+      AHF-L   0%       0  --.-KB/s     AHF-LI  15%  64.01M   289MB/s    AHF-LIN  24%  98.10M   181MB/s   AHF-LINU  33% 133.16M   179MB/s  AHF-LINUX  40% 160.93M   149MB/s AHF-LINUX_  47% 192.01M   144MB/sAHF-LINUX_v  57% 231.24M   138MB/sHF-LINUX_v2  69% 277.10M   142MB/sF-LINUX_v24  73% 294.96M   133MB/s-LINUX_v24.  80% 323.76M   133MB/sLINUX_v24.4  91% 366.38M   139MB/sINUX_v24.4.  93% 375.85M   130MB/sNUX_v24.4.0  96% 386.82M   125MB/sAHF-LINUX_v 100% 400.76M   127MB/s    in 3.2s    
+
+2024-06-11 06:02:24 (127 MB/s) - ‘AHF-LINUX_v24.4.0.zip.1’ saved [420233163/420233163]
+    ```
+2. As the**root** user run the *ahf_setup* file directly.
 
     ```
     <copy>
-    unzip /home/opc/Downloads/AHF-LINUX_v22.4.0.zip -d /tmp/ahf24.4.0
+    sudo su -
+    cd  /home/opc/Downloads/
+    ./ahf_setup
     </copy>
     ```
     Command output:
 
-    ```
-    Archive:  AHF-LINUX_v24.4.0.zip
-replace /tmp/ahf24.4.0/ahf_setup? [y]es, [n]o, [A]ll, [N]one, [r]ename: y
-  inflating: /tmp/ahf24.4.0/ahf_setup
- extracting: /tmp/ahf24.4.0/ahf_setup.dat
-  inflating: /tmp/ahf24.4.0/README.txt
-  inflating: /tmp/ahf24.4.0/oracle-tfa.pub
-    ```
 
 3. Run the **ahf_setup** script.
 
     ```
-    <copy>/tmp/ahf24.4.0/ahf_setup</copy>
+   
     ```
 
     Command output:
 
     <pre>
-    AHF Installer for Platform Linux Architecture x86_64
-    AHF Installation Log : /tmp/<>.log
-    Starting Autonomous Health Framework (AHF) Installation
-    AHF Version: 24.4.0 Build Date: 202405030509
-    Default AHF Location : /opt/oracle.ahf
-    Do you want to install AHF at [/opt/oracle.ahf] ? [Y]|N : <font color=#f80000><i><b>Y</i></b></font>
-    AHF Location : /opt/oracle.ahf
-    AHF Data Directory stores diagnostic collections and metadata.
-    AHF Data Directory requires at least 5GB (Recommended 10GB) of free space.
-    Please Enter AHF Data Directory : <font color=#f80000><i><b>/opt/oracle.ahf</i></b></font>
-    AHF Data Directory : /opt/oracle.ahf/data
-    Do you want to add AHF Notification Email IDs ? [Y]|N : <font color=#f80000><i><b>N</i></b></font>
-    Extracting AHF to /opt/oracle.ahf
-    Configuring TFA Services
-    Discovering Nodes and Oracle Resources
-    Successfully generated certificates.
-    Starting TFA Services
-    Created symlink /etc/systemd/system/multi-user.target.wants/oracle-tfa.service → /etc/systemd/system/oracle-tfa.service.
-    Created symlink /etc/systemd/system/graphical.target.wants/oracle-tfa.service → /etc/systemd/system/oracle-tfa.service.
+   AHF Installer for Platform Linux Architecture x86_64
 
-    .------------------------------------------------------------------------------------------.
-    | Host                 | Status of TFA | PID   | Port  | Version    | Build ID             |
-    +----------------------+---------------+-------+-------+------------+----------------------+
-    | ll46863-instance-ahf | RUNNING       | 14895 | 22303 | 2224.4.0.0.0 | 22100020220529214423 |
-    '----------------------+---------------+-------+-------+------------+----------------------'
+AHF Installation Log : /tmp/ahf_install_244000_44824_2024_06_11-04_14_42.log
 
-    Running TFA Inventory...
+Starting Autonomous Health Framework (AHF) Installation
 
-    Adding default users to TFA Access list...
+AHF Version: 24.4.0 Build Date: 202405030509
 
-    .------------------------------------------------------------------.
-    |                   Summary of AHF Configuration                   |
-    +-----------------+------------------------------------------------+
-    | Parameter       | Value                                          |
-    +-----------------+------------------------------------------------+
-    | AHF Location    | /opt/oracle.ahf                                |
-    | TFA Location    | /opt/oracle.ahf/tfa                            |
-    | Orachk Location | /opt/oracle.ahf/orachk                         |
-    | Data Directory  | /opt/oracle.ahf/data                           |
-    | Repository      | /opt/oracle.ahf/data/repository                |
-    | Diag Directory  | /opt/oracle.ahf/data/ll46863-instance-ahf/diag |
-    '-----------------+------------------------------------------------'
+Default AHF Location : /opt/oracle.ahf
 
-    Starting orachk scheduler from AHF ...
-    AHF binaries are available in /opt/oracle.ahf/bin
-    AHF is successfully installed
-    Do you want AHF to store your My Oracle Support Credentials for Automatic Upload ? Y|[N] : <font color=#f80000><i><b>N</i></b></font>
-    Moving /tmp/ahf_install_221000_12928_2022_07_06-13_24_29.log to /opt/oracle.ahf/data/ll46863-instance-ahf/diag/ahf/
-    </pre>
+Do you want to install AHF at [/opt/oracle.ahf] ? [Y]|N : Y
 
-## Task 3: Enable or disable Oracle ORAchk or Oracle EXAchk daemon to start automatically
+Do you want to install AHF at [/opt/oracle.ahf] ? [Y]|N : Y
+Please Enter AHF Data Directory : /opt/oracle.ahf/data
 
-Installing Oracle Autonomous Health Framework as **root** on Linux or Solaris automatically sets up and runs the Oracle ORAchk or Oracle EXAchk daemon.
+AHF Data Directory : /opt/oracle.ahf/data
 
-The daemon restarts at 1 am every day to discover environment changes. The daemon runs a full local Oracle ORAchk check once every week at 3 am, and a partial run of the most impactful checks at 2 am every day through the **oratier1** or **exatier1** profiles. The daemon automatically purges the **oratier1** or **exatier1** profile run that runs daily, after a week. The daemon also automatically purges the full local run after 2 weeks. You can change the daemon settings after enabling **autostart**.
+Do you want to add AHF Notification Email IDs ? [Y]|N : N
 
-1. To disable auto start:
+Extracting AHF to /opt/oracle.ahf
 
-1. To enable auto start:
+Setting up AHF CLI and SDK
 
-    ```
-    <copy>
-    ahfctl compliance -autostart
-    </copy>
-    ```
+Configuring TFA Services
 
-    Command output:
+Discovering Nodes and Oracle Resources
 
- 
-  
-    Command output:
+Successfully generated certificates.
 
-    ```
-   This is perl 5, version 26, subversion 3 (v5.26.3) built for x86_64-linux-thread-multi
-(with 58 registered patches, see perl -V for more detail)
+Starting TFA Services
+Created symlink /etc/systemd/system/multi-user.target.wants/oracle-tfa.service -> /etc/systemd/system/oracle-tfa.service.
+Created symlink /etc/systemd/system/graphical.target.wants/oracle-tfa.service -> /etc/systemd/system/oracle-tfa.service.
 
-Copyright 1987-2018, Larry Wall
+.-------------------------------------------------------------------------------------------.
+| Host                 | Status of TFA | PID   | Port  | Version    | Build ID              |
++----------------------+---------------+-------+-------+------------+-----------------------+
+| ll88415-instance-ahf | RUNNING       | 47230 | 23197 | 24.4.0.0.0 | 240400020240503050950 |
+'----------------------+---------------+-------+-------+------------+-----------------------'
 
-Perl may be copied only under the terms of either the Artistic License or the
-GNU General Public License, which may be found in the Perl 5 source kit.
+Running TFA Inventory...
 
-Complete documentation for Perl, including FAQ lists, should be found on
-this system using "man perl" or "perldoc perl".  If you have access to the
-Internet, point your browser at http://www.perl.org/, the Perl Home Page
+Adding default users to TFA Access list...
 
-    ```
+.------------------------------------------------------------------.
+|                   Summary of AHF Configuration                   |
++-----------------+------------------------------------------------+
+| Parameter       | Value                                          |
++-----------------+------------------------------------------------+
+| AHF Location    | /opt/oracle.ahf                                |
+| TFA Location    | /opt/oracle.ahf/tfa                            |
+| Orachk Location | /opt/oracle.ahf/orachk                         |
+| Data Directory  | /opt/oracle.ahf/data                           |
+| Repository      | /opt/oracle.ahf/data/repository                |
+| Diag Directory  | /opt/oracle.ahf/data/ll88415-instance-ahf/diag |
+'-----------------+------------------------------------------------'
 
 
-2. Check the status of SELinux.    
-
-    ```
-    <copy>
-    /usr/sbin/getenforce
-    </copy>
-    ```
-    Command output:
-
-    ```
-    Enforcing
-    ```
-
-    The **getenforce** command returns **Enforcing**, **Permissive**, or **Disabled**.
-
-3. Check the status of SELinux and the policy being used.
-
-    ```
-    <copy>
-    /usr/sbin/sestatus
-    </copy>
-    ```
-    Command output:
-
-
-
-
-    ```
-
-    >**Note:** AHF installer loads the policy and sets relevant contexts.
-
-    Command output:
-
-    Since you have already installed AHF in [Task 2](Task2:InstallAHFonLinuxorUNIXasrootuserindaemonmode), the installer script exits gracefully with a message, **AHF is already installed at /opt/oracle.ahf** as shown below.
-
-    ```
-    AHF Installer for Platform Linux Architecture x86_64
-    AHF Installation Log : /tmp/ahf_install_221000_33802_2022_07_06-14_00_20.log
-    Starting Autonomous Health Framework (AHF) Installation
-    AHF Version: 22.1.0 Build Date: 202205292144
-    AHF is already installed at /opt/oracle.ahf
-    Installed AHF Version: 22.1.0 Build Date: 202205292144
-    AHF is already running latest version. No need to upgrade.
-    ```
-
-    To install AHF, first uninstall, and then install it afresh.
-
-    To uninstall, run **ahfctl uninstall -deleterepo -silent**
-
-5. Check if the policy is loaded successfully.
-
-    ```
-    <copy>
-    /usr/sbin/semodule -l | grep inittfa-policy
-    </copy>
-    ```
-    Command output:
-    ```
-    inittfa-policy
-    ```
-## Task 6: Uninstall the current AHF (version 22.1.0.0.0) installation
-
-Performing Task 2 in Lab 2 requires that you uninstall AHF (version 22.1.0.0.0) before proceeding because in this workshop you can only upgrade AHF from 21.4.3 to 22.1.1.
 
 1. Check the version of AHF installed.
 
     ```
     <copy>
-    tfactl status
+    /opt/oracle.ahf/bin/tfactl print status
     </copy>
     ```
 
   	Command output:
 
     ```
-    .-------------------------------------------------------------------------------------------------------------.
-    | Host                 | Status of TFA | PID   | Port  | Version    | Build ID             | Inventory Status |
-    +----------------------+---------------+-------+-------+------------+----------------------+------------------+
-    | ll46863-instance-ahf | RUNNING       | 14895 | 22303 | 22.1.0.0.0 | 22100020220529214423 | COMPLETE         |
-    '----------------------+---------------+-------+-------+------------+----------------------+------------------'
-    ```
-
-2. Uninstall AHF.
+    ..-------------------------------------------------------------------------------------------------------------.
+| Host                 | Status of TFA | PID  | Port  | Version    | Build ID              | Inventory Status |
++----------------------+---------------+------+-------+------------+-----------------------+------------------+
+| ll88415-instance-ahf | RUNNING       | 3616 | 29603 | 24.45.0.0.0 | 240400020240503050950 | COMPLETE         |
+'----------------------+---------------+------+-------+------------+-----------------------+------------------'
 
     ```
-    <copy>
-    ahfctl uninstall -deleterepo -silent
-    </copy>
-    ```
-
-  	Command output:
-
-    ```
-    Starting AHF Uninstall
-    AHF will be uninstalled on:
-    ll46863-instance-ahf
-
-    Stopping AHF service on local node ll46863-instance-ahf...
-    Stopping TFA Support Tools...
-
-    Removed /etc/systemd/system/multi-user.target.wants/oracle-tfa.service.
-    Removed /etc/systemd/system/graphical.target.wants/oracle-tfa.service.
-
-    Stopping orachk scheduler ...
-    Removing orachk cache discovery....
-    No orachk cache discovery found.
-
-    Unable to send message to TFA
-
-    Removed orachk from inittab
-
-    Deleting selinux context entries
-    Removing AHF setup on ll46863-instance-ahf:
-    Removing /etc/rc.d/rc0.d/K17init.tfa
-    Removing /etc/rc.d/rc1.d/K17init.tfa
-    Removing /etc/rc.d/rc2.d/K17init.tfa
-    Removing /etc/rc.d/rc4.d/K17init.tfa
-    Removing /etc/rc.d/rc6.d/K17init.tfa
-    Removing /etc/init.d/init.tfa...
-    Removing /etc/systemd/system/oracle-tfa.service...
-    Removing /opt/oracle.ahf/rpms
-    Removing /opt/oracle.ahf/jre
-    Removing /opt/oracle.ahf/common
-    Removing /opt/oracle.ahf/bin
-    Removing /opt/oracle.ahf/python
-    Removing /opt/oracle.ahf/analyzer
-    Removing /opt/oracle.ahf/tfa
-    Removing /opt/oracle.ahf/chm
-    Removing /opt/oracle.ahf/orachk
-    Removing /opt/oracle.ahf/ahf
-    Removing /opt/oracle.ahf/data/ll46863-instance-ahf
-    Removing /opt/oracle.ahf/install.properties
-    Removing /opt/oracle.ahf/data/repository
-    Removing /opt/oracle.ahf/data
-    Removing /sys/fs/cgroup/cpu/oratfagroup/
-    ```
-
+**Note**: your **instance name** will be different to the one shown here.
+The version should be *24.45.0
+2. 
 ## Learn More
 
 * [Installing and Upgrading Oracle Autonomous Health Framework](https://docs.oracle.com/en/engineered-systems/health-diagnostics/autonomous-health-framework/ahfug/install-upgrade-ahf.html#GUID-663F0836-A2A2-4EFB-B19E-EABF303739A9)
@@ -305,6 +169,6 @@ Performing Task 2 in Lab 2 requires that you uninstall AHF (version 22.1.0.0.0) 
 * [Oracle Autonomous Health Framework Installation Command-Line Options](https://docs.oracle.com/en/engineered-systems/health-diagnostics/autonomous-health-framework/ahfug/install-ahf.html#GUID-F57C15E1-B82A-42A1-B064-B6C86639799F)
 
 ## Acknowledgements
-* **Author** - Nirmal Kumar
+* **Author** - Troy Anthony
 * **Contributors** -  Sarahi Partida, Robert Pastijn, Girdhari Ghantiyala, Anuradha Chepuri
-* **Last Updated By/Date** - Nirmal Kumar, July 2022
+* **Last Updated By/Date** - Trpy Anthony, June 2024
